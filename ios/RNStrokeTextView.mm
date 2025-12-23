@@ -11,11 +11,11 @@
 // 2. Swift 클래스 import (프로젝트 설정에 따라 이름이 다를 수 있음)
 // 라이브러리 개발 중이라면 보통 "라이브러리이름-Swift.h" 입니다.
 // 예: react-native-stroke-text -> react_native_stroke_text-Swift.h
-#if __has_include("StrokeText-Swift.h")
-#import "StrokeText-Swift.h"
-#else
-#import <StrokeText/StrokeText-Swift.h>
-#endif
+// #if __has_include("react-native-stroke-text-Swift.h")
+// #import "react-native-stroke-text-Swift.h"
+// #else
+// #import <react-native-stroke-text/react-native-stroke-text-Swift.h>
+// #endif
 
 using namespace facebook::react;
 

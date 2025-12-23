@@ -1,13 +1,14 @@
 import {
   codegenNativeComponent,
   type ColorValue,
+  type HostComponent,
   type ViewProps,
 } from 'react-native';
 import type {
+  WithDefault,
   Float,
   Int32,
-  WithDefault,
-} from 'react-native/Libraries/Types/CodegenTypes';
+} from 'react-native/Libraries/Types/CodegenTypesNamespace';
 
 type TextAlign = 'center' | 'left' | 'right';
 

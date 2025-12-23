@@ -117,7 +117,7 @@
     },
     "ios": {
       "componentProvider": {
-        "StrokeTextView": "StrokeTextView"
+        "RNStrokeText": "RNStrokeText"
       }
     }
   },
