@@ -1,10 +1,20 @@
 import { View, StyleSheet } from 'react-native';
-import { ReactNativeStrokeTextView } from '@studiokico/react-native-stroke-text';
+import { StrokeText } from '@studiokico/react-native-stroke-text';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <ReactNativeStrokeTextView color="#32a852" style={styles.box} />
+      <StrokeText
+        text="Test Stroke Text Component"
+        fontSize={12}
+        color="#000000"
+        strokeColor="#c334eb"
+        strokeWidth={2}
+        align="center"
+        numberOfLines={4}
+        ellipsis={true}
+        style={styles.box}
+      />
     </View>
   );
 }
@@ -14,6 +24,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#ffffff',
   },
   box: {
     width: 60,

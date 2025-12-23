@@ -1,2 +1,3 @@
-export { default as ReactNativeStrokeTextView } from './ReactNativeStrokeTextViewNativeComponent';
-export * from './ReactNativeStrokeTextViewNativeComponent';
+export { default as StrokeText } from './StrokeTextViewNativeComponent';
+export * from './StrokeTextViewNativeComponent';
+
