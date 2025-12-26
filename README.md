@@ -70,18 +70,6 @@ The following table outlines the props available for the `StrokeText` component:
 
 ```
 
-<h1 align="center">
-  <img width="450" src="docs/ellipsis.jpeg"/>
-</h1>
-
-
-
-## Contributing
-
-- [Development workflow](CONTRIBUTING.md#development-workflow)
-- [Sending a pull request](CONTRIBUTING.md#sending-a-pull-request)
-- [Code of conduct](CODE_OF_CONDUCT.md)
-
 ## License
 
 MIT
