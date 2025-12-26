@@ -57,7 +57,9 @@ class StrokeTextView(context: Context) : View(context) {
     private var textLayout: StaticLayout? = null // 여기가 핵심: 텍스트 레이아웃 엔진
 
     private fun createLayout(width: Int): StaticLayout? {
-        if (text.isEmpty() || width <= 0) return null
+        if (text.isEmpty()) return null
+
+        val validWidth = if (width > 0) width else resources.displayMetrics.widthPixels
 
         val scaledFontSize = getScaledSize(fontSize)
         textPaint.textSize = scaledFontSize
@@ -69,7 +71,7 @@ class StrokeTextView(context: Context) : View(context) {
             else -> Layout.Alignment.ALIGN_NORMAL
         }
 
-        val builder = StaticLayout.Builder.obtain(text, 0, text.length, textPaint, width)
+        val builder = StaticLayout.Builder.obtain(text, 0, text.length, textPaint, validWidth)
             .setAlignment(alignment)
             .setLineSpacing(0f, 1f)
             .setIncludePad(true)
@@ -87,13 +89,12 @@ class StrokeTextView(context: Context) : View(context) {
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val widthMode = MeasureSpec.getMode(widthMeasureSpec)
         val widthSize = MeasureSpec.getSize(widthMeasureSpec)
-
         val availableWidth = if (customWidth > 0) {
              getScaledSize(customWidth).toInt()
-        } else if (widthMode != MeasureSpec.UNSPECIFIED) {
+        } else if (widthSize > 0) {
              widthSize
         } else {
-             resources.displayMetrics.widthPixels // fallback
+             resources.displayMetrics.widthPixels
         }
 
         val scaledStrokeWidth = getScaledSize(strokeWidth)
@@ -120,7 +121,7 @@ class StrokeTextView(context: Context) : View(context) {
                 }
                 finalWidth = (ceil(maxLineWidth) + paddingLeft + paddingRight + (scaledStrokeWidth * 2)).toInt()
 
-                if (widthMode == MeasureSpec.AT_MOST) {
+                if (widthMode == MeasureSpec.AT_MOST && widthSize > 0) {
                     finalWidth = minOf(finalWidth, widthSize)
                 }
             }

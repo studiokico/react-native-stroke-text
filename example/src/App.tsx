@@ -1,19 +1,32 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import { StrokeText } from '@studiokico/react-native-stroke-text';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <Text>1. Fixed Height (120)</Text>
       <StrokeText
-        text="Test Stroke Text Component"
+        text="Fixed Height"
         fontSize={20}
         color="#000000"
         strokeColor="#c334eb"
         strokeWidth={2}
-        align="center"
+        style={styles.fixedBox}
+        align={'center'}
+      />
+
+      <Text style={{ marginTop: 20 }}>2. Auto Height (No height style)</Text>
+      <StrokeText
+        text="Auto Height Test Long Text Long Text Long Text Long Text Long Text"
+        fontSize={20}
+        color="#ffffff"
+        strokeColor="#000000"
+        strokeWidth={2}
         numberOfLines={2}
         ellipsis={true}
-        style={styles.box}
+        width={200}
+        style={styles.autoBox}
+        align={'center'}
       />
     </View>
   );
@@ -24,11 +37,15 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#eeeeee',
   },
-  box: {
-    width: 120,
+  fixedBox: {
+    width: 200,
     height: 120,
-    marginVertical: 20,
+    backgroundColor: 'yellow',
+    marginBottom: 10,
+  },
+  autoBox: {
+    backgroundColor: 'cyan',
   },
 });

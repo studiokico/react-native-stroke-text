@@ -31,6 +31,21 @@ public class StrokeTextView: UILabel {
         self.numberOfLines = 0
         self.clipsToBounds = false
         self.backgroundColor = .clear
+
+        self.setContentCompressionResistancePriority(.required, for: .horizontal)
+        self.setContentCompressionResistancePriority(.required, for: .vertical)
+    }
+
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+
+        if customWidth > 0 {
+            self.preferredMaxLayoutWidth = customWidth
+        } else {
+            if self.bounds.width > 0 {
+                self.preferredMaxLayoutWidth = self.bounds.width
+            }
+        }
     }
 
     public override func drawText(in rect: CGRect) {
@@ -40,18 +55,23 @@ public class StrokeTextView: UILabel {
         let context = UIGraphicsGetCurrentContext()
         context?.saveGState()
 
+        let height = self.textRect(forBounds: rect, limitedToNumberOfLines: self.numberOfLines).height
+        let topAlignedRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.width, height: height)
+
         if strokeWidth > 0 {
             context?.setLineWidth(strokeWidth)
             context?.setLineJoin(.round)
             context?.setTextDrawingMode(.stroke)
             self.textColor = strokeColor
-            super.drawText(in: rect)
+
+            super.drawText(in: topAlignedRect)
         }
 
         context?.setTextDrawingMode(.fill)
         self.textColor = originalTextColor
         self.shadowOffset = CGSize.zero
-        super.drawText(in: rect)
+
+        super.drawText(in: topAlignedRect)
 
         self.shadowOffset = shadowOffset
         context?.restoreGState()
@@ -59,7 +79,11 @@ public class StrokeTextView: UILabel {
 
     public override var intrinsicContentSize: CGSize {
         let size = super.intrinsicContentSize
-        let extra = strokeWidth
-        return CGSize(width: size.width + extra, height: size.height + extra)
+        let extra = strokeWidth * 2
+
+        let newWidth = size.width + extra
+        let newHeight = size.height + extra
+
+        return CGSize(width: newWidth, height: newHeight)
     }
 }

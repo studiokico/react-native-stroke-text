@@ -3275,7 +3275,6 @@ __metadata:
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-prettier: "npm:^5.5.4"
     jest: "npm:^29.7.0"
-    lefthook: "npm:^2.0.3"
     prettier: "npm:^2.8.8"
     react: "npm:19.1.1"
     react-native: "npm:0.82.1"
@@ -8189,117 +8188,6 @@ __metadata:
     picocolors: "npm:^1.1.1"
     shell-quote: "npm:^1.8.3"
   checksum: 10c0/fac5e7ad90bf185594cad4c831a52419eef50e667c4eddb5b0a58eb5f944e16d947636ee767b9896ffd46a51db34925edd3b854c48efb47f6d767ffd7d904e71
-  languageName: node
-  linkType: hard
-
-"lefthook-darwin-arm64@npm:2.0.12":
-  version: 2.0.12
-  resolution: "lefthook-darwin-arm64@npm:2.0.12"
-  conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"lefthook-darwin-x64@npm:2.0.12":
-  version: 2.0.12
-  resolution: "lefthook-darwin-x64@npm:2.0.12"
-  conditions: os=darwin & cpu=x64
-  languageName: node
-  linkType: hard
-
-"lefthook-freebsd-arm64@npm:2.0.12":
-  version: 2.0.12
-  resolution: "lefthook-freebsd-arm64@npm:2.0.12"
-  conditions: os=freebsd & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"lefthook-freebsd-x64@npm:2.0.12":
-  version: 2.0.12
-  resolution: "lefthook-freebsd-x64@npm:2.0.12"
-  conditions: os=freebsd & cpu=x64
-  languageName: node
-  linkType: hard
-
-"lefthook-linux-arm64@npm:2.0.12":
-  version: 2.0.12
-  resolution: "lefthook-linux-arm64@npm:2.0.12"
-  conditions: os=linux & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"lefthook-linux-x64@npm:2.0.12":
-  version: 2.0.12
-  resolution: "lefthook-linux-x64@npm:2.0.12"
-  conditions: os=linux & cpu=x64
-  languageName: node
-  linkType: hard
-
-"lefthook-openbsd-arm64@npm:2.0.12":
-  version: 2.0.12
-  resolution: "lefthook-openbsd-arm64@npm:2.0.12"
-  conditions: os=openbsd & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"lefthook-openbsd-x64@npm:2.0.12":
-  version: 2.0.12
-  resolution: "lefthook-openbsd-x64@npm:2.0.12"
-  conditions: os=openbsd & cpu=x64
-  languageName: node
-  linkType: hard
-
-"lefthook-windows-arm64@npm:2.0.12":
-  version: 2.0.12
-  resolution: "lefthook-windows-arm64@npm:2.0.12"
-  conditions: os=win32 & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"lefthook-windows-x64@npm:2.0.12":
-  version: 2.0.12
-  resolution: "lefthook-windows-x64@npm:2.0.12"
-  conditions: os=win32 & cpu=x64
-  languageName: node
-  linkType: hard
-
-"lefthook@npm:^2.0.3":
-  version: 2.0.12
-  resolution: "lefthook@npm:2.0.12"
-  dependencies:
-    lefthook-darwin-arm64: "npm:2.0.12"
-    lefthook-darwin-x64: "npm:2.0.12"
-    lefthook-freebsd-arm64: "npm:2.0.12"
-    lefthook-freebsd-x64: "npm:2.0.12"
-    lefthook-linux-arm64: "npm:2.0.12"
-    lefthook-linux-x64: "npm:2.0.12"
-    lefthook-openbsd-arm64: "npm:2.0.12"
-    lefthook-openbsd-x64: "npm:2.0.12"
-    lefthook-windows-arm64: "npm:2.0.12"
-    lefthook-windows-x64: "npm:2.0.12"
-  dependenciesMeta:
-    lefthook-darwin-arm64:
-      optional: true
-    lefthook-darwin-x64:
-      optional: true
-    lefthook-freebsd-arm64:
-      optional: true
-    lefthook-freebsd-x64:
-      optional: true
-    lefthook-linux-arm64:
-      optional: true
-    lefthook-linux-x64:
-      optional: true
-    lefthook-openbsd-arm64:
-      optional: true
-    lefthook-openbsd-x64:
-      optional: true
-    lefthook-windows-arm64:
-      optional: true
-    lefthook-windows-x64:
-      optional: true
-  bin:
-    lefthook: bin/index.js
-  checksum: 10c0/5bc76bf69a0e13782948ad89484c52ce85593f382ae0f97c065bba36d5a6279d5cfc7c3caa087edb86645b3035d7d4d7eab612ebb8b09ac7ffca15892a1d2da6
   languageName: node
   linkType: hard
 
