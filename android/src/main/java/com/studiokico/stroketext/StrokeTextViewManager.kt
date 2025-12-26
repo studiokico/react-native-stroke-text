@@ -5,17 +5,17 @@ import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.ViewManagerDelegate
 import com.facebook.react.uimanager.annotations.ReactProp
-import com.facebook.react.viewmanagers.StrokeTextViewManagerDelegate
-import com.facebook.react.viewmanagers.StrokeTextViewManagerInterface
+import com.facebook.react.viewmanagers.RNStrokeTextViewManagerDelegate
+import com.facebook.react.viewmanagers.RNStrokeTextViewManagerInterface
 
 @ReactModule(name = StrokeTextViewManager.REACT_CLASS)
-class StrokeTextViewManager : SimpleViewManager<StrokeTextView>(), StrokeTextViewManagerInterface<StrokeTextView> {
+class StrokeTextViewManager : SimpleViewManager<StrokeTextView>(), RNStrokeTextViewManagerInterface<StrokeTextView> {
 
     companion object {
-        const val REACT_CLASS = "StrokeTextView"
+        const val REACT_CLASS = "RNStrokeTextView"
     }
 
-    private val delegate: ViewManagerDelegate<StrokeTextView> = StrokeTextViewManagerDelegate(this)
+    private val delegate: ViewManagerDelegate<StrokeTextView> = RNStrokeTextViewManagerDelegate(this)
 
     override fun getDelegate(): ViewManagerDelegate<StrokeTextView> = delegate
 

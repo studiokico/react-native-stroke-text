@@ -11,7 +11,7 @@ export default function App() {
         strokeColor="#c334eb"
         strokeWidth={2}
         align="center"
-        numberOfLines={4}
+        numberOfLines={2}
         ellipsis={true}
         style={styles.box}
       />
