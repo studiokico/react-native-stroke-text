@@ -5,6 +5,7 @@ folly_compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 
 
 Pod::Spec.new do |s|
   s.name         = "react-native-stroke-text"
+  s.module_name = "StrokeText"
   s.version      = package["version"]
   s.summary      = package["description"]
   s.homepage     = package["homepage"]

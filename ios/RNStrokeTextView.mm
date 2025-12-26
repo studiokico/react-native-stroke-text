@@ -11,15 +11,15 @@
 // 2. Swift 클래스 import (프로젝트 설정에 따라 이름이 다를 수 있음)
 // 라이브러리 개발 중이라면 보통 "라이브러리이름-Swift.h" 입니다.
 // 예: react-native-stroke-text -> react_native_stroke_text-Swift.h
-// #if __has_include("react-native-stroke-text-Swift.h")
-// #import "react-native-stroke-text-Swift.h"
-// #else
-// #import <react-native-stroke-text/react-native-stroke-text-Swift.h>
-// #endif
+#if __has_include("StrokeText-Swift.h")
+#import "StrokeText-Swift.h"
+#else
+#import <StrokeText/StrokeText-Swift.h>
+#endif
 
 using namespace facebook::react;
 
-@interface RNStrokeTextView () <RCTStrokeTextViewViewProtocol>
+@interface RNStrokeTextView () <RCTRNStrokeTextViewViewProtocol>
 @end
 
 @implementation RNStrokeTextView {
@@ -27,12 +27,12 @@ using namespace facebook::react;
 }
 
 + (ComponentDescriptorProvider)componentDescriptorProvider {
-    return concreteComponentDescriptorProvider<StrokeTextViewComponentDescriptor>();
+    return concreteComponentDescriptorProvider<RNStrokeTextViewComponentDescriptor>();
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        static const auto defaultProps = std::make_shared<const StrokeTextViewProps>();
+        static const auto defaultProps = std::make_shared<const RNStrokeTextViewProps>();
         _props = defaultProps;
 
         _view = [[StrokeTextView alloc] initWithFrame:self.bounds];
@@ -43,8 +43,8 @@ using namespace facebook::react;
 }
 
 - (void)updateProps:(Props::Shared const &)props oldProps:(Props::Shared const &)oldProps {
-    const auto &oldViewProps = *std::static_pointer_cast<const StrokeTextViewProps>(_props);
-    const auto &newViewProps = *std::static_pointer_cast<const StrokeTextViewProps>(props);
+    const auto &oldViewProps = *std::static_pointer_cast<const RNStrokeTextViewProps>(_props);
+    const auto &newViewProps = *std::static_pointer_cast<const RNStrokeTextViewProps>(props);
 
     if (oldViewProps.text != newViewProps.text) {
         _view.text = RCTNSStringFromString(newViewProps.text);
@@ -74,13 +74,13 @@ using namespace facebook::react;
 
     if (oldViewProps.align != newViewProps.align) {
         switch (newViewProps.align) {
-            case StrokeTextViewAlign::Center:
+            case RNStrokeTextViewAlign::Center:
                 _view.textAlignment = NSTextAlignmentCenter;
                 break;
-            case StrokeTextViewAlign::Right:
+            case RNStrokeTextViewAlign::Right:
                 _view.textAlignment = NSTextAlignmentRight;
                 break;
-            case StrokeTextViewAlign::Left:
+            case RNStrokeTextViewAlign::Left:
             default:
                 _view.textAlignment = NSTextAlignmentLeft;
                 break;

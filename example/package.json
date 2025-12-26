@@ -8,7 +8,9 @@
     "start": "react-native start --terminal xterm-256color --verbose",
     "build:android": "react-native build-android --extra-params \"--no-daemon --console=plain -PreactNativeArchitectures=arm64-v8a\"",
     "build:ios": "react-native build-ios --mode Debug",
-    "codegen": "node node_modules/react-native/scripts/generate-codegen-artifacts.js --path . --targetPlatform ios --outputPath ios"
+    "codegen": "node node_modules/react-native/scripts/generate-codegen-artifacts.js --path . --targetPlatform ios --outputPath ios",
+    "clean": "watchman shutdown-server && rm -rf $TMPDIR/metro-* && rm -rf $TMPDIR/haste-map-* && rm -rf $TMPDIR/react-* && rm -rf node_modules/.cache && yarn cache clean && rm -rf ios/build && rm -rf android/app/build && rm -rf android/.gradle && rm -rf android/app/.cxx",
+    "pod": "cd ios && rm -rf build Pods Podfile.lock ~/Library/Developer/Xcode/DerivedData && pod install && cd .."
   },
   "dependencies": {
     "react": "19.1.1",

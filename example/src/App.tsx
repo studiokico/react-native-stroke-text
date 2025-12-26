@@ -6,7 +6,7 @@ export default function App() {
     <View style={styles.container}>
       <StrokeText
         text="Test Stroke Text Component"
-        fontSize={12}
+        fontSize={20}
         color="#000000"
         strokeColor="#c334eb"
         strokeWidth={2}
@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
   },
   box: {
-    width: 60,
-    height: 60,
+    width: 120,
+    height: 120,
     marginVertical: 20,
   },
 });

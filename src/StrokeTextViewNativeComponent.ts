@@ -1,7 +1,6 @@
 import {
   codegenNativeComponent,
   type ColorValue,
-  type HostComponent,
   type ViewProps,
 } from 'react-native';
 import type {
@@ -25,7 +24,4 @@ export interface NativeProps extends ViewProps {
   ellipsis?: boolean;
 }
 
-export default codegenNativeComponent<NativeProps>('StrokeTextView');
-// export default codegenNativeComponent<NativeProps>(
-//   'StrokeTextView'
-// ) as HostComponent<NativeProps>;
+export default codegenNativeComponent<NativeProps>('RNStrokeTextView');
