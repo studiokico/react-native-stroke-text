@@ -28,6 +28,23 @@ export default function App() {
         style={styles.autoBox}
         align={'center'}
       />
+
+      <Text style={{ marginTop: 20, fontFamily: 'WantedSans-Medium' }}>
+        3. Auto Height (No height style) with font.
+      </Text>
+      <StrokeText
+        text="하하하 성수 (hahaha seongsu)"
+        fontSize={13}
+        fontFamily={'WantedSans-Medium'}
+        color="#000000"
+        strokeColor="#ffffff"
+        strokeWidth={2}
+        numberOfLines={2}
+        ellipsis={true}
+        width={80}
+        style={styles.autoBox}
+        align={'center'}
+      />
     </View>
   );
 }
