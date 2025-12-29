@@ -33,7 +33,7 @@ export default function App() {
         3. Auto Height (No height style) with font.
       </Text>
       <StrokeText
-        text="하하하 성수 (hahaha seongsu)"
+        text="가나다라마바사아자"
         fontSize={13}
         fontFamily={'WantedSans-Medium'}
         color="#000000"

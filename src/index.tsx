@@ -31,7 +31,7 @@ export const StrokeText = (props: NativeProps): React.JSX.Element => {
     fontFamily: fontFamily,
     textAlign: align || undefined,
     width: width ? Number(width) : undefined,
-    margin: strokeWidth,
+    padding: strokeWidth,
   };
 
   return (
@@ -40,6 +40,8 @@ export const StrokeText = (props: NativeProps): React.JSX.Element => {
         style={[ghostTextStyle, styles.ghostText]}
         numberOfLines={numberOfLines}
         ellipsizeMode={ellipsis ? 'tail' : undefined}
+        importantForAccessibility="no-hide-descendants"
+        aria-hidden={true}
       >
         {text}
       </Text>
