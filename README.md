@@ -57,9 +57,9 @@ The following table outlines the props available for the `StrokeText` component:
 ```jsx
 <StrokeText
   text="Lorem ipsum"
-    width={150} // +
-    ellipsis={true} // +
-    numberOfLines={1} // +
+    width={150}
+    ellipsis={true}
+    numberOfLines={1}
   fontSize={32}
   color="#FFFFFF"
   strokeColor="#000000"
